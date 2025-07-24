@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Image Breaker | Image Resister</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        background: #f0f0f0;
+        padding: 20px;
+      }
+      canvas {
+        display: block;
+        margin: 20px auto;
+        border: 1px solid #ccc;
+      }
+      #controls {
+        margin: 10px;
+      }
+      #saveButton {
+        margin-top: 10px;
+        display: none;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <script src="break_image.js" defer></script>
+  </head>
+  <body>
+    <h2>Upload an image that you want broken. [[Resist the image!]]</h2>
+    <div id="controls">
+      <input type="file" id="baseImageInput" accept="image/*" />
+      <p>Upload an image to break/beautify your image with.</p>
+      <input type="file" id="overlayInput" accept="image/png" multiple />
+      <br /><br />
+      <button onclick="breakImage()">Break/Beautify Image</button>
+      <br />
+      <button id="saveButton" onclick="saveCanvas('broken-image', 'png')">Save Broken/Beautified Image</button>
+    </div>
+  </body>
+</html>
